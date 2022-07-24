@@ -11,6 +11,10 @@
 		9E0C09C0288D3B3E0083DC25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C09BF288D3B3E0083DC25 /* ContentView.swift */; };
 		9E0C09C2288D3B400083DC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E0C09C1288D3B400083DC25 /* Assets.xcassets */; };
 		9E0C09C5288D3B400083DC25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E0C09C4288D3B400083DC25 /* Preview Assets.xcassets */; };
+		9E0C09CE288D3B760083DC25 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C09CD288D3B760083DC25 /* SplashScreen.swift */; };
+		9E0C09D0288D3CAD0083DC25 /* SplashScreenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C09CF288D3CAD0083DC25 /* SplashScreenData.swift */; };
+		9E0C09D3288DA4850083DC25 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C09D2288DA4850083DC25 /* RoundedButton.swift */; };
+		9E0C09D5288DA74B0083DC25 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0C09D4288DA74B0083DC25 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		9E0C09BF288D3B3E0083DC25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9E0C09C1288D3B400083DC25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E0C09C4288D3B400083DC25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E0C09CD288D3B760083DC25 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		9E0C09CF288D3CAD0083DC25 /* SplashScreenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenData.swift; sourceTree = "<group>"; };
+		9E0C09D2288DA4850083DC25 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		9E0C09D4288DA74B0083DC25 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,8 @@
 		9E0C09BC288D3B3E0083DC25 /* MoviesSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				9E0C09D1288DA47B0083DC25 /* view */,
+				9E0C09CB288D3B470083DC25 /* app */,
 				9E0C09BD288D3B3E0083DC25 /* MoviesSwiftUIApp.swift */,
 				9E0C09BF288D3B3E0083DC25 /* ContentView.swift */,
 				9E0C09C1288D3B400083DC25 /* Assets.xcassets */,
@@ -65,6 +75,32 @@
 				9E0C09C4288D3B400083DC25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9E0C09CB288D3B470083DC25 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				9E0C09CC288D3B4D0083DC25 /* splash */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		9E0C09CC288D3B4D0083DC25 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				9E0C09CD288D3B760083DC25 /* SplashScreen.swift */,
+				9E0C09CF288D3CAD0083DC25 /* SplashScreenData.swift */,
+				9E0C09D4288DA74B0083DC25 /* SplashScreenView.swift */,
+			);
+			path = splash;
+			sourceTree = "<group>";
+		};
+		9E0C09D1288DA47B0083DC25 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9E0C09D2288DA4850083DC25 /* RoundedButton.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E0C09CE288D3B760083DC25 /* SplashScreen.swift in Sources */,
+				9E0C09D3288DA4850083DC25 /* RoundedButton.swift in Sources */,
 				9E0C09C0288D3B3E0083DC25 /* ContentView.swift in Sources */,
+				9E0C09D0288D3CAD0083DC25 /* SplashScreenData.swift in Sources */,
 				9E0C09BE288D3B3E0083DC25 /* MoviesSwiftUIApp.swift in Sources */,
+				9E0C09D5288DA74B0083DC25 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("isOnboard") private var isOnboard:Bool = true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if isOnboard{
+            SplashScreenView()
+        }else{
+            Text("Hello word")
+        }
     }
 }
 

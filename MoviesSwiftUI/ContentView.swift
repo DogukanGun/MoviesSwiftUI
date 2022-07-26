@@ -15,7 +15,7 @@ struct ContentView: View {
         if isOnboard{
             SplashScreenView()
         }else{
-            Text("Hello word")
+            HomeBaseView()
         }
     }
 }

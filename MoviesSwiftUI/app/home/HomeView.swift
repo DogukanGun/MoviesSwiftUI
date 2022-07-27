@@ -16,74 +16,71 @@ struct HomeView: View {
     }
     
     var body: some View {
-        VStack(spacing:30){
-            Spacer()
-            Text("Ironman")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-            VStack(spacing:20){
-                Button {
-                    //TODO buraya action gelecek
-                } label: {
-                    HStack{
-                        Image(systemName: "play")
-                            .font(.system(size: 20, weight: .bold, design: .monospaced))
-                            .foregroundColor(.white)
-                        Text("Play")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
+        ScrollView(.vertical){
+            VStack(spacing:30){
+                ZStack{
+                    Image("splash-1")
+                        .resizable()
+                        .scaledToFill()
+                    Rectangle()
+                            .foregroundColor(.clear)
+                            .background(LinearGradient(colors: [Color.black.opacity(0.6)], startPoint: .top, endPoint: .bottom))
+                }.frame(maxHeight:UIScreen.main.bounds.height/2)
+                
+                Text("Ironman")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .offset(y:-100)
+                VStack(spacing:20){
+                    Button {
+                        //TODO buraya action gelecek
+                    } label: {
+                        HStack{
+                            Image(systemName: "play")
+                                .font(.system(size: 20, weight: .bold, design: .monospaced))
+                                .foregroundColor(.white)
+                            Text("Play")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                        }
+                        .padding(10)
+                        .background(Color(UIColor(named: "ButtonColor")!))
+                        
                     }
                     .padding(10)
-                    .background(Color(UIColor(named: "ButtonColor")!))
-                    
-                }
-                .padding(10)
-                VStack(alignment:.leading){
-                    HStack(){
-                        Text("my watch list".uppercased())
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                        Spacer()
-                        Text("See all ")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                    }
-                    .padding(.bottom,10)
-                    HStack{
-                        if let popularMovies = popularMovies?.results{
-                            ScrollView(.horizontal,showsIndicators: false){
-                                HStack{
-                                    ForEach(popularMovies,id: \.posterPath){ movie in
-                                        VStack{
-                                            PopularMoviesView(popularMovie: movie)
-                                        }
-                                        .frame(maxHeight: 200)
-                                    }
-                                }
+                    VStack(alignment:.leading){
+                        HStack(){
+                            Text("my watch list".uppercased())
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                            Text("See all ")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                        }
+                        .padding(.bottom,10)
+                        HStack{
+                            if let popularMovies = popularMovies?.results{
+                                HomeViewBottomList(popularMovies: popularMovies)
                             }
-                            .padding(.top,10)
                         }
                     }
+                    
                 }
-                
-            }.background(Color.black)
-
-            
-        } 
-        .navigationBarHidden(false)
-        .frame(maxWidth:.infinity
-               ,maxHeight:.infinity)
-        .background(Image("splash-1")
-            .resizable()
-            .scaledToFit()
-            )
-        .onAppear(perform: {
-            homeVM.getMovies()
-        })
-        
-        
+                .background(Color.black)
+                .offset(y:-100)
+            }
+            .navigationBarHidden(true)
+            .frame(maxWidth:.infinity
+                   ,maxHeight:.infinity)
+            .onAppear(perform: {
+                homeVM.getMovies()
+            })
+        }
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
+        .background(Color.black)
     }
     
 }

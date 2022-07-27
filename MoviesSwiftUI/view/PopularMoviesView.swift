@@ -10,6 +10,7 @@ import SwiftUI
 struct PopularMoviesView: View {
     
     var popularMovie:PopularMovie
+    var height:CGFloat
     
     var body: some View {
         VStack {
@@ -17,7 +18,8 @@ struct PopularMoviesView: View {
                 AsyncImage(url: URL(string: ImageClient.getImageFullUrl(imageName: popularMovie.posterPath!))){ image in
                     image
                         .resizable()
-                        .scaledToFit() 
+                        .scaledToFill()
+                        .frame(width: .infinity, height: height)
                 } placeholder: {
                     Text(ImageClient.getImageFullUrl(imageName: popularMovie.posterPath!))
                         .foregroundColor(.white)
@@ -42,7 +44,7 @@ struct PopularMoviesView: View {
 
 struct PopularMoviesView_Previews: PreviewProvider {
     static var previews: some View {
-        PopularMoviesView(popularMovie: PopularMovie(adult: false, backdropPath: nil, genreIDS: nil, id: nil, originalLanguage: nil, originalTitle: nil, overview: nil, popularity: nil, posterPath: "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", releaseDate: nil, title: "Ironman", video: nil, voteAverage: nil, voteCount: nil))
+        PopularMoviesView(popularMovie: PopularMovie(adult: false, backdropPath: nil, genreIDS: nil, id: nil, originalLanguage: nil, originalTitle: nil, overview: nil, popularity: nil, posterPath: "/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", releaseDate: nil, title: "Ironman", video: nil, voteAverage: nil, voteCount: nil),height: 100)
             .previewLayout(.sizeThatFits)
             .background(Color.black)
     }

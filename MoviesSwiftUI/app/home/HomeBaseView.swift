@@ -11,28 +11,30 @@ struct HomeBaseView: View {
     
     init(){
         UITabBar.appearance().backgroundColor = UIColor.black
-        UITabBar.appearance().tintColor = UIColor.red
-        UITabBar.appearance().barTintColor = UIColor.red
+        UITabBar.appearance().barStyle = .black
+        UITabBar.appearance().isTranslucent = false
     }
     
     var body: some View {
-        TabView{
-            HomeView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "house") 
-                        Text("Home")
+        NavigationView {
+            TabView{
+                HomeView()
+                    .tabItem {
+                        VStack{
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
                     }
-                }
-            SplashScreenView()
-                .tabItem {
-                    VStack{
-                        Image(systemName: "house")
-                        Text("Home")
+                SplashScreenView()
+                    .tabItem {
+                        VStack{
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
                     }
-                }
+            }
+            .tint(.red)
         }
-        .tint(.red)
     }
 }
 

@@ -9,6 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     
+    init(){
+        startUITabView()
+    }
+    
     @StateObject var homeVM = HomeViewVM()
     
     var popularMovies:PopularMovies?{

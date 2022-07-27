@@ -39,18 +39,7 @@ struct MovieDetailView: View {
                     .multilineTextAlignment(.leading)
                     .frame(width:UIScreen.main.bounds.width,alignment:.leading)
                 Spacer()
-                    Button {
-                        
-                    } label: {
-                        Text("watch trailer".uppercased())
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            
-                    }
-                    .frame(width: UIScreen.main.bounds.width/1.5)
-                    .padding(10)
-                    .background(Color.red)
-                    .clipShape(Capsule())
+                    FilledRoundedButton(buttonText: "watch trailer",buttonWidth: UIScreen.main.bounds.width/1.5)
             }
             
         }

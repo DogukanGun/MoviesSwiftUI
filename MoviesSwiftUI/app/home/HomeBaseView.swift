@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct HomeBaseView: View {
-    
-    init(){
-        UITabBar.appearance().backgroundColor = UIColor.black
-        UITabBar.appearance().barStyle = .black
-        UITabBar.appearance().isTranslucent = false
-    }
+     
     
     var body: some View {
         NavigationView {
@@ -25,16 +20,17 @@ struct HomeBaseView: View {
                             Text("Home")
                         }
                     }
-                SplashScreenView()
+                MoviesListView()
                     .tabItem {
                         VStack{
-                            Image(systemName: "house")
+                            Image(systemName: "list.bullet")
                             Text("Home")
                         }
-                    }
+                    } 
             }
             .tint(.red)
         }
+        
     }
 }
 
@@ -43,3 +39,4 @@ struct HomeBaseView_Previews: PreviewProvider {
         HomeBaseView()
     }
 }
+
